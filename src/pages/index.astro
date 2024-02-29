@@ -38,7 +38,7 @@ import HtmlToPdfConverter from "../components/HtmlToPdfConverter.svelte";
 				
 				<!-- Card for the jsPDF version -->
 				<!-- This section is prepared for a JavaScript-based PDF conversion, presumably with jsPDF -->
-				<JSPDFToPdfConverter client:load />
+				<JSPDFToPdfConverter client:only />
 				
 				<!-- Card for the html2pdf.js version -->
 				<!-- This section uses a Svelte component to perform PDF conversion, targeting content within an iframe -->
