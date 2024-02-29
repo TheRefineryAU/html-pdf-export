@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webpage to PDF</title>
+  <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+</head>
+<body>
+  <button onclick="convertToPDF()">Convert to PDF</button>
+
+  <!-- Your webpage content goes here -->
+
+  <script>
+    function convertToPDF() {
+      // Get the entire HTML content of the webpage
+      const htmlContent = document.documentElement.outerHTML;
+
+      // Set up the configuration for html2pdf
+      const pdfOptions = {
+        margin: 10,
+        filename: 'webpage.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+      };
+
+      // Use html2pdf to convert HTML to PDF
+      html2pdf().from(htmlContent).set(pdfOptions).outputPdf(pdf => {
+        // Save the PDF file
+        const blob = new Blob([pdf], { type: 'application/pdf' });
+        const link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.download = 'webpage.pdf';
+        link.click();
+      });
+    }
+  </script>
+</body>
+</html>
