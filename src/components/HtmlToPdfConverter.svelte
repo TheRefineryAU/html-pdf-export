@@ -1,6 +1,10 @@
 <script>
     import html2pdf from 'html2pdf.js';
     
+    /**
+   * Converts the specified HTML element into a PDF document.
+   * @prop {string} selector - The CSS selector of the element to convert to PDF.
+   */
     export let selector = '';
     
     function convertToPDF() {
