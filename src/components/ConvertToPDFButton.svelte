@@ -33,7 +33,3 @@
 </script>
 
 <button class="btn text-xl hover:bg-blue-600 hover:border-blue-700 hover:text-white" on:click={() => convertToPDF()}>Convert to PDF</button>
-
-<style>
-	/* Your styles here */
-</style>
