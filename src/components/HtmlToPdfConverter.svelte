@@ -29,4 +29,8 @@
 
 </script>
 
-<button class="btn text-xl hover:bg-blue-600 hover:border-blue-700 hover:text-white" on:click={() => convertToPDF()}>Convert to PDF</button>
+<div class="card bg-white text-gray-800 border-2 border-gray-600 p-8">
+    <p class="text-2xl mb-4">html2pdf.js Svelte Component Version</p>
+    <!-- Svelte component for converting HTML to PDF, targeting the iframe content. Note: 'client:only' is necessary for client-side rendering in Astro -->
+    <button class="btn text-xl hover:bg-blue-600 hover:border-blue-700 hover:text-white" on:click={() => convertToPDF()}>Convert to PDF</button>
+</div>
